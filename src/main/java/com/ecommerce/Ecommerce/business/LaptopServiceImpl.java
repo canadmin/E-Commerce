@@ -40,4 +40,10 @@ public class LaptopServiceImpl implements LaptopService {
     public void deleteLaptop(Long id) {
         laptopDao.deleteById(id);
     }
+
+    @Override
+    public Laptop updateLaptop(Laptop laptop) {
+        Laptop laptop1=laptopDao.save(laptop);
+        return laptop1;
+    }
 }

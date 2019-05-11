@@ -9,4 +9,5 @@ public interface LaptopService {
     void addLaptop(Laptop laptop);
     Laptop findOne(Long id);
     void deleteLaptop(Long id);
+    Laptop updateLaptop(Laptop laptop);
 }
