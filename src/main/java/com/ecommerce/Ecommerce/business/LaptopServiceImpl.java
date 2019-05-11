@@ -6,6 +6,8 @@ import com.ecommerce.Ecommerce.service.LaptopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LaptopServiceImpl implements LaptopService {
 
@@ -17,8 +19,20 @@ public class LaptopServiceImpl implements LaptopService {
     }
 
     @Override
+    public List<Laptop> findAll() {
+        List<Laptop> laptops= (List<Laptop>) laptopDao.findAll();
+        return laptops;
+    }
+
+    @Override
     public void addLaptop(Laptop laptop) {
         laptopDao.save(laptop);
 
+    }
+
+    @Override
+    public Laptop findOne(Long id) {
+        Laptop laptop=laptopDao.findAllById(id);
+        return laptop;
     }
 }

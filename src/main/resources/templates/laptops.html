@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html   xmlns:th="https://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Laptops</h1>
+    <table>
+        <tr>
+        <th>Marka</th>
+        <th>Fiyat</th>
+        </tr>
+        <tr th:each="laptop:${laptops}">
+             <td > <a th:href="@{/laptopProduct(id=${laptop.id})}"><span th:text="${laptop.code}"></span> </a> </td>
+            <td th:text="${laptop.price}"> </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

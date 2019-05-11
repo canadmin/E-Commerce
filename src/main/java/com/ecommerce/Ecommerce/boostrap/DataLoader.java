@@ -40,6 +40,19 @@ public class DataLoader implements CommandLineRunner {
         laptop.setRam("16 GB DDR4 2400 MH");
         laptop.setSsd("128 GB");
         laptop.setType("Gamebook");
+        laptop.setPrice("7000 TL");
         laptopService.addLaptop(laptop);
+        Laptop laptop2=new Laptop();
+        laptop2.setBrand("Dell");
+        laptop2.setCode("Dell 7567");
+        laptop2.setCpu("i7-7700hq");
+        laptop2.setGpu("1050 Ti");
+        laptop2.setOs("Windows 10");
+        laptop2.setRam("16 GB DDR4 2400 MH");
+        laptop2.setSsd("128 GB");
+        laptop2.setType("Gamebook");
+        laptop2.setPrice("6900 TL");
+        laptopService.addLaptop(laptop2);
+
     }
 }

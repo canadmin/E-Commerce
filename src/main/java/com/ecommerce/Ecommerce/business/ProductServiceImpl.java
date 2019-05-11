@@ -17,12 +17,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public boolean addProduct(Product product) {
-        try{
             productDao.save(product);
             return true;
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return false;
+
     }
 }

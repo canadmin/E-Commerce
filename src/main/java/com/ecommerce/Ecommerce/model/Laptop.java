@@ -18,9 +18,10 @@ public class Laptop {
     private String ssd;
     private String os;
     private String code;
+    private String price;
 
     //get constructor
-    public Laptop(Long id, String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code) {
+    public Laptop(Long id, String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code,String price) {
         this.id = id;
         this.type = type;
         this.brand = brand;
@@ -30,11 +31,13 @@ public class Laptop {
         this.ssd = ssd;
         this.os = os;
         this.code = code;
+        this.price=price;
+
     }
 
     //set constructor
 
-    public Laptop(String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code) {
+    public Laptop(String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code,String price) {
         this.type = type;
         this.brand = brand;
         this.ram = ram;
@@ -43,6 +46,7 @@ public class Laptop {
         this.ssd = ssd;
         this.os = os;
         this.code = code;
+        this.price=price;
     }
 
     public Laptop() {
@@ -118,5 +122,13 @@ public class Laptop {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }

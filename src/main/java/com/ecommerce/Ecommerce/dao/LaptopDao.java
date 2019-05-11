@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LaptopDao extends CrudRepository<Laptop,Long> {
-
+    Laptop findAllById(Long id);
 
 }
