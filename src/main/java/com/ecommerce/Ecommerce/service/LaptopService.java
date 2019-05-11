@@ -8,4 +8,5 @@ public interface LaptopService {
     List<Laptop> findAll();
     void addLaptop(Laptop laptop);
     Laptop findOne(Long id);
+    void deleteLaptop(Long id);
 }

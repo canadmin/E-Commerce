@@ -35,4 +35,9 @@ public class LaptopServiceImpl implements LaptopService {
         Laptop laptop=laptopDao.findAllById(id);
         return laptop;
     }
+
+    @Override
+    public void deleteLaptop(Long id) {
+        laptopDao.deleteById(id);
+    }
 }
