@@ -1,5 +1,6 @@
 package com.ecommerce.Ecommerce.model;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -10,33 +11,19 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String productName;
-    private String productPrice;
-    private String productCategory;
-    private String productDescription;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "product_category", joinColumns = {@JoinColumn(name = "product_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id", referencedColumnName = "id")})
+    private Category category;
 
-    //get constructor
-    public Product(Long id, String productName, String productPrice, String productCategory, String productDescription) {
-        this.id = id;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productCategory = productCategory;
-        this.productDescription = productDescription;
+    public Product(String  productId, Category category) {
+        this.productName = productId;
+        this.category = category;
     }
-
-    // add constructer
-    public Product(String productName, String productPrice, String productCategory, String productDescription) {
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productCategory = productCategory;
-        this.productDescription = productDescription;
-    }
-    //default contructor
 
     public Product() {
-        //default
     }
 
-    //getter and setter
     public Long getId() {
         return id;
     }
@@ -53,27 +40,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getProductPrice() {
-        return productPrice;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setProductPrice(String productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public String getProductCategory() {
-        return productCategory;
-    }
-
-    public void setProductCategory(String productCategory) {
-        this.productCategory = productCategory;
-    }
-
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
