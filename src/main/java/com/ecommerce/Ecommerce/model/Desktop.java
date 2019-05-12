@@ -1,11 +1,10 @@
 package com.ecommerce.Ecommerce.model;
 
-
 import javax.persistence.*;
 
 @Entity
 @Table
-public class Allinone {
+public class Desktop {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,10 +19,11 @@ public class Allinone {
     private String price;
     private String description;
 
-    public Allinone() {
+    public Desktop() {
     }
 
-    public Allinone(String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
+    public Desktop(Long id,String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
+        this.id=id;
         this.type = type;
         this.brand = brand;
         this.ram = ram;
@@ -36,8 +36,7 @@ public class Allinone {
         this.description = description;
     }
 
-    public Allinone(Long id, String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
-        this.id = id;
+    public Desktop(String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
         this.type = type;
         this.brand = brand;
         this.ram = ram;

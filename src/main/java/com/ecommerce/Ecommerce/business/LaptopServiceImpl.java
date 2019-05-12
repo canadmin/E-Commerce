@@ -43,7 +43,7 @@ public class LaptopServiceImpl implements ComputerService<Laptop> {
 
     @Override
     public Laptop updateProduct(Laptop product) {
-        Laptop laptop1=laptopDao.save(product);
-        return laptop1;    }
+        Laptop laptop=laptopDao.save(product);
+        return laptop;    }
 
 }
