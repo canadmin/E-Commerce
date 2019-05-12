@@ -3,7 +3,7 @@ package com.ecommerce.Ecommerce.boostrap;
 import com.ecommerce.Ecommerce.model.Category;
 import com.ecommerce.Ecommerce.model.Laptop;
 import com.ecommerce.Ecommerce.model.Product;
-import com.ecommerce.Ecommerce.service.LaptopService;
+import com.ecommerce.Ecommerce.service.ComputerService;
 import com.ecommerce.Ecommerce.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements CommandLineRunner {
 
     private ProductService productService;
-    private LaptopService laptopService;
+    private ComputerService<Laptop> computerService;
 
 
 
-    public DataLoader(ProductService productService, LaptopService laptopService) {
+    public DataLoader(ProductService productService, ComputerService<Laptop> computerService) {
         this.productService = productService;
-        this.laptopService = laptopService;
+        this.computerService = computerService;
     }
 
     @Override
@@ -41,7 +41,10 @@ public class DataLoader implements CommandLineRunner {
         laptop.setSsd("128 GB");
         laptop.setType("Gamebook");
         laptop.setPrice("7000 TL");
-        laptopService.addLaptop(laptop);
+        laptop.setDescription("Güzel laptop");
+        computerService.addProduct(laptop);
+
+
         Laptop laptop2=new Laptop();
         laptop2.setBrand("Dell");
         laptop2.setCode("Dell 7567");
@@ -52,7 +55,8 @@ public class DataLoader implements CommandLineRunner {
         laptop2.setSsd("128 GB");
         laptop2.setType("Gamebook");
         laptop2.setPrice("6900 TL");
-        laptopService.addLaptop(laptop2);
+        laptop2.setDescription("Güzel laptop");
+        computerService.addProduct(laptop2);
 
     }
 }

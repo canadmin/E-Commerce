@@ -5,8 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Laptop {
-
+public class Allinone {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -21,8 +20,20 @@ public class Laptop {
     private String price;
     private String description;
 
-    //get constructor
-    public Laptop(Long id, String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
+    public Allinone(String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
+        this.type = type;
+        this.brand = brand;
+        this.ram = ram;
+        this.cpu = cpu;
+        this.gpu = gpu;
+        this.ssd = ssd;
+        this.os = os;
+        this.code = code;
+        this.price = price;
+        this.description = description;
+    }
+
+    public Allinone(Long id, String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
         this.id = id;
         this.type = type;
         this.brand = brand;
@@ -34,26 +45,6 @@ public class Laptop {
         this.code = code;
         this.price = price;
         this.description = description;
-
-    }
-
-    //set constructor
-
-    public Laptop(String type, String brand, String ram, String cpu, String gpu, String ssd, String os, String code, String price, String description) {
-        this.type = type;
-        this.brand = brand;
-        this.ram = ram;
-        this.cpu = cpu;
-        this.gpu = gpu;
-        this.ssd = ssd;
-        this.os = os;
-        this.code = code;
-        this.price = price;
-        this.description = description;
-
-    }
-
-    public Laptop() {
     }
 
     public Long getId() {
@@ -131,7 +122,6 @@ public class Laptop {
     public String getPrice() {
         return price;
     }
-
 
     public void setPrice(String price) {
         this.price = price;
